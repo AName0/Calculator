@@ -1,8 +1,7 @@
 let num1;
 let num2;
 let operator;
-
-const calculatorDisplay = document.getElementById("calculator-display")
+let display;
 
 function add(num1, num2) {
     return num1 + num2;
@@ -31,6 +30,18 @@ function operate(num1, num2, operator) {
         return divide(num1, num2);
     }
 }
+
+const calculatorDisplay = document.getElementById("calculator-display");
+const numZeroButton = document.getElementById("number-zero");
+const numOneButton = document.getElementById("number-one");
+const numTwoButton = document.getElementById("number-two");
+const numThreeButton = document.getElementById("number-three");
+const numFourButton = document.getElementById("number-four");
+const numFiveButton = document.getElementById("number-five");
+const numSixButton = document.getElementById("number-six");
+const numSevenButton = document.getElementById("number-seven");
+const numEightButton = document.getElementById("number-eight");
+const numNineButton = document.getElementById("number-nine");
 
 function displayNumZero() {
     calculatorDisplay.textContent += "0";
@@ -71,3 +82,14 @@ function displayNumEight() {
 function displayNumNine() {
     calculatorDisplay.textContent += "9";
 }
+
+numZeroButton.addEventListener("click", displayNumZero);
+numOneButton.addEventListener("click", displayNumOne);
+numTwoButton.addEventListener("click", displayNumTwo);
+numThreeButton.addEventListener("click", displayNumThree);
+numFourButton.addEventListener("click", displayNumFour);
+numFiveButton.addEventListener("click", displayNumFive);
+numSixButton.addEventListener("click", displayNumSix);
+numSevenButton.addEventListener("click", displayNumSeven);
+numEightButton.addEventListener("click", displayNumEight);
+numNineButton.addEventListener("click", displayNumNine);
