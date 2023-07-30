@@ -114,7 +114,28 @@ addButton.addEventListener("click", () => {
     num1 = Number(displayVal);
     displayVal = "";
     operator = "+"
-    calculatorDisplay.textContent += "+"
+    calculatorDisplay.textContent = `${num1} ${operator} `;
+})
+
+subtractButton.addEventListener("click", () => {
+    num1 = Number(displayVal);
+    displayVal = "";
+    operator = "-"
+    calculatorDisplay.textContent = `${num1} ${operator} `;
+})
+
+multiplyButton.addEventListener("click", () => {
+    num1 = Number(displayVal);
+    displayVal = "";
+    operator = "*"
+    calculatorDisplay.textContent = `${num1} ${operator} `;
+})
+
+divideButton.addEventListener("click", () => {
+    num1 = Number(displayVal);
+    displayVal = "";
+    operator = "/"
+    calculatorDisplay.textContent = `${num1} ${operator} `;
 })
 
 equalsButton.addEventListener("click", () => {
