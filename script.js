@@ -44,8 +44,12 @@ const numEightButton = document.getElementById("number-eight");
 const numNineButton = document.getElementById("number-nine");
 
 function displayNumZero() {
-    calculatorDisplay.textContent += "0";
+    if (displayVal !== "") {
+        calculatorDisplay.textContent += "0";
     displayVal += "0";
+    } else {
+        return;
+    }
 }
 
 function displayNumOne() {
@@ -111,35 +115,77 @@ const divideButton = document.getElementById("division");
 const equalsButton = document.getElementById("equals");
 
 addButton.addEventListener("click", () => {
-    num1 = Number(displayVal);
-    displayVal = "";
-    operator = "+"
-    calculatorDisplay.textContent = `${num1} ${operator} `;
+    if (operator === "+") {
+        return;
+    } else if (operate(num1, Number(displayVal),operator) !== undefined & displayVal !== "") {
+        num1 = operate(num1,Number(displayVal),operator);
+        displayVal = "";
+        operator = "+";
+        calculatorDisplay.textContent = `${num1} ${operator} `;
+    } else {
+        num1 = Number(displayVal);
+        displayVal = "";
+        operator = "+";
+        calculatorDisplay.textContent = `${num1} ${operator} `;
+        console.log(typeof operate(num1,Number(displayVal),operator));
+    }
 })
 
 subtractButton.addEventListener("click", () => {
-    num1 = Number(displayVal);
-    displayVal = "";
-    operator = "-"
-    calculatorDisplay.textContent = `${num1} ${operator} `;
+    if (operator === "-" || displayVal === "") {
+        return;
+    } else if (operate(num1, Number(displayVal),operator) !== undefined & displayVal !== "") {
+        num1 = operate(num1,Number(displayVal),operator);
+        displayVal = "";
+        operator = "-";
+        calculatorDisplay.textContent = `${num1} ${operator} `;
+    } else {
+        num1 = Number(displayVal);
+        displayVal = "";
+        operator = "-";
+        calculatorDisplay.textContent = `${num1} ${operator} `;
+        console.log(typeof operate(num1,Number(displayVal),operator));
+    }
 })
 
 multiplyButton.addEventListener("click", () => {
-    num1 = Number(displayVal);
-    displayVal = "";
-    operator = "*"
-    calculatorDisplay.textContent = `${num1} ${operator} `;
+    if (operator === "*" || displayVal === "") {
+        return;
+    } else if (operate(num1, Number(displayVal),operator) !== undefined & displayVal !== "") {
+        num1 = operate(num1,Number(displayVal),operator);
+        displayVal = "";
+        operator = "*";
+        calculatorDisplay.textContent = `${num1} ${operator} `;
+    } else {
+        num1 = Number(displayVal);
+        displayVal = "";
+        operator = "*";
+        calculatorDisplay.textContent = `${num1} ${operator} `;
+        console.log(typeof operate(num1,Number(displayVal),operator));
+    }
 })
 
 divideButton.addEventListener("click", () => {
-    num1 = Number(displayVal);
-    displayVal = "";
-    operator = "/"
-    calculatorDisplay.textContent = `${num1} ${operator} `;
+    if (operator === "/" || displayVal === "") {
+        return;
+    } else if (operate(num1, Number(displayVal),operator) !== undefined & displayVal !== "") {
+        num1 = operate(num1,Number(displayVal),operator);
+        displayVal = "";
+        operator = "/";
+        calculatorDisplay.textContent = `${num1} ${operator} `;
+    } else {
+        num1 = Number(displayVal);
+        displayVal = "";
+        operator = "/";
+        calculatorDisplay.textContent = `${num1} ${operator} `;
+        console.log(typeof operate(num1,Number(displayVal),operator));
+    }
 })
 
 equalsButton.addEventListener("click", () => {
     result = operate(num1,Number(displayVal),operator);
-    displayVal = result;
+    num1 = result;
+    displayVal = "";
+    operator = "";
     calculatorDisplay.textContent = result;
 })
