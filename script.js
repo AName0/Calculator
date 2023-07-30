@@ -1,7 +1,7 @@
 let num1;
 let num2;
 let operator;
-let display;
+let displayVal = "";
 
 function add(num1, num2) {
     return num1 + num2;
@@ -45,42 +45,52 @@ const numNineButton = document.getElementById("number-nine");
 
 function displayNumZero() {
     calculatorDisplay.textContent += "0";
+    displayVal += "0";
 }
 
 function displayNumOne() {
     calculatorDisplay.textContent += "1";
+    displayVal += "1";
 }
 
 function displayNumTwo() {
     calculatorDisplay.textContent += "2";
+    displayVal += "2";
 }
 
 function displayNumThree() {
     calculatorDisplay.textContent += "3";
+    displayVal += "3";
 }
 
 function displayNumFour() {
     calculatorDisplay.textContent += "4";
+    displayVal += "4";
 }
 
 function displayNumFive() {
     calculatorDisplay.textContent += "5";
+    displayVal += "5";
 }
 
 function displayNumSix() {
     calculatorDisplay.textContent += "6";
+    displayVal += "6";
 }
 
 function displayNumSeven() {
     calculatorDisplay.textContent += "7";
+    displayVal += "7";
 }
 
 function displayNumEight() {
     calculatorDisplay.textContent += "8";
+    displayVal += "8";
 }
 
 function displayNumNine() {
     calculatorDisplay.textContent += "9";
+    displayVal += "9";
 }
 
 numZeroButton.addEventListener("click", displayNumZero);
@@ -93,3 +103,22 @@ numSixButton.addEventListener("click", displayNumSix);
 numSevenButton.addEventListener("click", displayNumSeven);
 numEightButton.addEventListener("click", displayNumEight);
 numNineButton.addEventListener("click", displayNumNine);
+
+const addButton = document.getElementById("addition");
+const subtractButton = document.getElementById("subtraction");
+const multiplyButton = document.getElementById("multiplication");
+const divideButton = document.getElementById("division");
+const equalsButton = document.getElementById("equals");
+
+addButton.addEventListener("click", () => {
+    num1 = Number(displayVal);
+    displayVal = "";
+    operator = "+"
+    calculatorDisplay.textContent += "+"
+})
+
+equalsButton.addEventListener("click", () => {
+    result = operate(num1,Number(displayVal),operator);
+    displayVal = result;
+    calculatorDisplay.textContent = result;
+})
