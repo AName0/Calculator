@@ -91,6 +91,12 @@ numTwoButton.addEventListener("click", () => {
     if (inputDisplay.textContent === "0") {
         inputDisplay.textContent = "2";
         displayVal += "2"
+    } else if (inputDisplay.textContent == result && calculatorDisplay.textContent == result) {
+        calculatorDisplay.textContent = "";
+        inputDisplay.textContent = "2";
+        displayVal = "2";
+        reset();
+        console.log("reset input num 2");
     } else {
         inputDisplay.textContent += "2";
         displayVal += "2";
@@ -101,6 +107,12 @@ numThreeButton.addEventListener("click", () => {
     if (inputDisplay.textContent === "0") {
         inputDisplay.textContent = "3";
         displayVal += "3"
+    } else if (inputDisplay.textContent == result && calculatorDisplay.textContent == result) {
+        calculatorDisplay.textContent = "";
+        inputDisplay.textContent = "3";
+        displayVal = "3";
+        reset();
+        console.log("reset input num 3");
     } else {
         inputDisplay.textContent += "3";
         displayVal += "3";
@@ -111,6 +123,12 @@ numFourButton.addEventListener("click", () => {
     if (inputDisplay.textContent === "0") {
         inputDisplay.textContent = "4";
         displayVal += "4"
+    } else if (inputDisplay.textContent == result && calculatorDisplay.textContent == result) {
+        calculatorDisplay.textContent = "";
+        inputDisplay.textContent = "4";
+        displayVal = "4";
+        reset();
+        console.log("reset input num 4");
     } else {
         inputDisplay.textContent += "4";
         displayVal += "4";
@@ -121,6 +139,12 @@ numFiveButton.addEventListener("click", () => {
     if (inputDisplay.textContent === "0") {
         inputDisplay.textContent = "5";
         displayVal += "5"
+    } else if (inputDisplay.textContent == result && calculatorDisplay.textContent == result) {
+        calculatorDisplay.textContent = "";
+        inputDisplay.textContent = "5";
+        displayVal = "5";
+        reset();
+        console.log("reset input num 5");
     } else {
         inputDisplay.textContent += "5";
         displayVal += "5";
@@ -131,6 +155,12 @@ numSixButton.addEventListener("click", () => {
     if (inputDisplay.textContent === "0") {
         inputDisplay.textContent = "6";
         displayVal += "6"
+    } else if (inputDisplay.textContent == result && calculatorDisplay.textContent == result) {
+        calculatorDisplay.textContent = "";
+        inputDisplay.textContent = "6";
+        displayVal = "6";
+        reset();
+        console.log("reset input num 6");
     } else {
         inputDisplay.textContent += "6";
         displayVal += "6";
@@ -141,6 +171,12 @@ numSevenButton.addEventListener("click", () => {
     if (inputDisplay.textContent === "0") {
         inputDisplay.textContent = "7";
         displayVal += "7"
+    } else if (inputDisplay.textContent == result && calculatorDisplay.textContent == result) {
+        calculatorDisplay.textContent = "";
+        inputDisplay.textContent = "7";
+        displayVal = "1";
+        reset();
+        console.log("reset input num 7");
     } else {
         inputDisplay.textContent += "7";
         displayVal += "7";
@@ -151,6 +187,12 @@ numEightButton.addEventListener("click", () => {
     if (inputDisplay.textContent === "0") {
         inputDisplay.textContent = "8";
         displayVal += "8"
+    } else if (inputDisplay.textContent == result && calculatorDisplay.textContent == result) {
+        calculatorDisplay.textContent = "";
+        inputDisplay.textContent = "8";
+        displayVal = "8";
+        reset();
+        console.log("reset input num 8");
     } else {
         inputDisplay.textContent += "8";
         displayVal += "8";
@@ -161,6 +203,12 @@ numNineButton.addEventListener("click", () => {
     if (inputDisplay.textContent === "0") {
         inputDisplay.textContent = "9";
         displayVal += "9"
+    } else if (inputDisplay.textContent == result && calculatorDisplay.textContent == result) {
+        calculatorDisplay.textContent = "";
+        inputDisplay.textContent = "9";
+        displayVal = "9";
+        reset();
+        console.log("reset input num 9");
     } else {
         inputDisplay.textContent += "9";
         displayVal += "9";
