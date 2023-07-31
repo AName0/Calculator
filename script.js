@@ -233,9 +233,6 @@ addButton.addEventListener("click", () => {
         calculatorDisplay.textContent = `${firstNum} ${operator}`;
         inputDisplay.textContent = "";
         console.log("operator switch to add")
-    } else if (displayVal === "" && secondNum === undefined) {
-        console.log("add impossible");
-        return;
     } else if (firstNum === result && displayVal !== ""){
         secondNum = Number(displayVal);
         result = operate(operator,firstNum,secondNum);
@@ -270,9 +267,6 @@ subtractButton.addEventListener("click", () => {
         calculatorDisplay.textContent = `${firstNum} ${operator}`;
         inputDisplay.textContent = "";
         console.log("operator switch to subtract");
-    } else if (displayVal === "" && secondNum === undefined) {
-        console.log("subtract impossible");
-        return;
     } else if (firstNum === result && displayVal !== ""){
         secondNum = Number(displayVal);
         result = operate(operator,firstNum,secondNum);
@@ -295,10 +289,52 @@ subtractButton.addEventListener("click", () => {
     }
 })
 
+multiplyButton.addEventListener("click", () => {
+    if (equalsButtonUsed === true) {
+        operator = "*";
+        equalsButtonUsed = false;
+        calculatorDisplay.textContent = `${firstNum} ${operator}`;
+        inputDisplay.textContent = "";
+        console.log("equals button used, multiply operator using");
+    } else if (operator !== undefined && displayVal === "") {
+        operator = "*";
+        calculatorDisplay.textContent = `${firstNum} ${operator}`;
+        inputDisplay.textContent = "";
+        console.log("operator switch to multiply");
+    } else if (firstNum === result && displayVal !== ""){
+        secondNum = Number(displayVal);
+        result = operate(operator,firstNum,secondNum);
+        firstNum = result;
+        displayVal = "";
+        operator = "*";
+        secondNum = undefined;
+        equalsButtonUsed = false;
+        calculatorDisplay.textContent = `${firstNum} ${operator}`;
+        inputDisplay.textContent = "";
+        console.log("multiply numbers, operator is currently multiplication");
+    } else {
+        firstNum = Number(displayVal);
+        operator = "*";
+        result = firstNum;
+        displayVal = "";
+        calculatorDisplay.textContent = `${firstNum} ${operator}`;
+        inputDisplay.textContent = "";
+        console.log("first num loaded to multiply");
+    }
+})
+
 equalsButton.addEventListener("click", () => {
     if (displayVal === "") {
         console.log("equals not possible")
         return;
+    } else if (operator === undefined) {
+        firstNum = Number(displayVal);
+        result = firstNum;
+        displayVal = "";
+        calculatorDisplay.textContent = `${firstNum}`;
+        inputDisplay.textContent = `${firstNum}`;
+        equalsButtonUsed = true;
+        console.log("number entered, no operator or secondNum");
     } else {
         secondNum = Number(displayVal);
         result = operate(operator,firstNum,secondNum)
