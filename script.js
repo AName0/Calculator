@@ -33,7 +33,7 @@ function operate(operator, firstNum, secondNum) {
     }
 }
 
-function reset() {
+function clear() {
     firstNum = undefined;
     secondNum = undefined;
     operator = undefined;
@@ -63,7 +63,7 @@ numZeroButton.addEventListener("click", () => {
         calculatorDisplay.textContent = "";
         inputDisplay.textContent = "0";
         displayVal = "";
-        reset();
+        clear();
         console.log("reset using zero button");
     } else {
         inputDisplay.textContent += "0";
@@ -79,7 +79,7 @@ numOneButton.addEventListener("click", () => {
         calculatorDisplay.textContent = "";
         inputDisplay.textContent = "1";
         displayVal = "1";
-        reset();
+        clear();
         console.log("reset input num 1");
     } else {
         inputDisplay.textContent += "1";
@@ -95,7 +95,7 @@ numTwoButton.addEventListener("click", () => {
         calculatorDisplay.textContent = "";
         inputDisplay.textContent = "2";
         displayVal = "2";
-        reset();
+        clear();
         console.log("reset input num 2");
     } else {
         inputDisplay.textContent += "2";
@@ -111,7 +111,7 @@ numThreeButton.addEventListener("click", () => {
         calculatorDisplay.textContent = "";
         inputDisplay.textContent = "3";
         displayVal = "3";
-        reset();
+        clear();
         console.log("reset input num 3");
     } else {
         inputDisplay.textContent += "3";
@@ -127,7 +127,7 @@ numFourButton.addEventListener("click", () => {
         calculatorDisplay.textContent = "";
         inputDisplay.textContent = "4";
         displayVal = "4";
-        reset();
+        clear();
         console.log("reset input num 4");
     } else {
         inputDisplay.textContent += "4";
@@ -143,7 +143,7 @@ numFiveButton.addEventListener("click", () => {
         calculatorDisplay.textContent = "";
         inputDisplay.textContent = "5";
         displayVal = "5";
-        reset();
+        clear();
         console.log("reset input num 5");
     } else {
         inputDisplay.textContent += "5";
@@ -159,7 +159,7 @@ numSixButton.addEventListener("click", () => {
         calculatorDisplay.textContent = "";
         inputDisplay.textContent = "6";
         displayVal = "6";
-        reset();
+        clear();
         console.log("reset input num 6");
     } else {
         inputDisplay.textContent += "6";
@@ -175,7 +175,7 @@ numSevenButton.addEventListener("click", () => {
         calculatorDisplay.textContent = "";
         inputDisplay.textContent = "7";
         displayVal = "1";
-        reset();
+        clear();
         console.log("reset input num 7");
     } else {
         inputDisplay.textContent += "7";
@@ -191,7 +191,7 @@ numEightButton.addEventListener("click", () => {
         calculatorDisplay.textContent = "";
         inputDisplay.textContent = "8";
         displayVal = "8";
-        reset();
+        clear();
         console.log("reset input num 8");
     } else {
         inputDisplay.textContent += "8";
@@ -207,7 +207,7 @@ numNineButton.addEventListener("click", () => {
         calculatorDisplay.textContent = "";
         inputDisplay.textContent = "9";
         displayVal = "9";
-        reset();
+        clear();
         console.log("reset input num 9");
     } else {
         inputDisplay.textContent += "9";
@@ -220,6 +220,7 @@ const subtractButton = document.getElementById("subtraction");
 const multiplyButton = document.getElementById("multiplication");
 const divisionButton = document.getElementById("division");
 const equalsButton = document.getElementById("equals");
+const clearButton = document.getElementById("clear");
 const backspace = document.getElementById("backspace");
 
 addButton.addEventListener("click", () => {
@@ -383,13 +384,25 @@ equalsButton.addEventListener("click", () => {
     }
 })
 
-backspace.addEventListener("click", () => {                     //TODO: make this work
-    if (operator === undefined && secondNum === undefined) {
+clearButton.addEventListener("click", () => {
+    clear();
+    displayVal = "";
+    calculatorDisplay.textContent = "";
+    inputDisplay.textContent = "0";
+    console.log("cleared");
+})
+
+backspace.addEventListener("click", () => {
+    if (inputDisplay.textContent === result) {
+        return;
+    } else if (operator === undefined && secondNum === undefined) {
         displayVal = displayVal.slice(0,-1);
         inputDisplay.textContent = inputDisplay.textContent.slice(0, -1);
         console.log("backspace");
         console.log(displayVal);
     } else if (operator !== undefined && displayVal === "") {
+        displayVal = firstNum;
+        result = 0;
         operator = undefined;
         calculatorDisplay.textContent = `${firstNum}`;
         console.log("operator removed");
