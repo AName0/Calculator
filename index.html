@@ -9,37 +9,42 @@
     <body>
         <div class="calculator-container">
             <div class="calculator">
-                <div id="calculator-display"></div>
-                <div id="input-display"></div>
+                <div id="display-container">
+                    <div id="calculator-display"></div>
+                    <div id="input-display"></div>
+                </div>
                 <div id="row-1">
-                    <button id="clear">C</button>
-                    <button id="backspace">Delete</button>
+                    <button id="clear" class="special-buttons">Clear</button>
+                    <button id="backspace" class="special-buttons">Delete</button>
                 </div>
                 <div id="row-2">
-                    <button id="number-seven">7</button>
-                    <button id="number-eight">8</button>
-                    <button id="number-nine">9</button>
-                    <button id="division">/</button>
+                    <button id="number-seven" class="number-button">7</button>
+                    <button id="number-eight" class="number-button">8</button>
+                    <button id="number-nine" class="number-button">9</button>
+                    <button id="division">&divide;</button>
                 </div>
                 <div id="row-3">
-                    <button id="number-four">4</button>
-                    <button id="number-five">5</button>
-                    <button id="number-six">6</button>
-                    <button id="multiplication">*</button>
+                    <button id="number-four" class="number-button">4</button>
+                    <button id="number-five" class="number-button">5</button>
+                    <button id="number-six" class="number-button">6</button>
+                    <button id="multiplication">&times;</button>
                 </div>
                 <div id="row-4">
-                    <button id="number-one">1</button>
-                    <button id="number-two">2</button>
-                    <button id="number-three">3</button>
+                    <button id="number-one" class="number-button">1</button>
+                    <button id="number-two" class="number-button">2</button>
+                    <button id="number-three" class="number-button">3</button>
                     <button id="subtraction">-</button>
                 </div>
                 <div id="row-5">
-                    <button id="number-zero">0</button>
+                    <button id="number-zero" class="number-button">0</button>
                     <button id="decimal-point">.</button>
                     <button id="equals">=</button>
                     <button id="addition">+</button>
                 </div>
             </div>
+        </div>
+        <div id="footer">
+            <div id=footer-text>Made by AName0</div>
         </div>
     </body>
 </html>
