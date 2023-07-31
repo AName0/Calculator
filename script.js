@@ -220,6 +220,7 @@ const subtractButton = document.getElementById("subtraction");
 const multiplyButton = document.getElementById("multiplication");
 const divisionButton = document.getElementById("division");
 const equalsButton = document.getElementById("equals");
+const backspace = document.getElementById("backspace");
 
 addButton.addEventListener("click", () => {
     if (equalsButtonUsed === true) {
@@ -227,6 +228,11 @@ addButton.addEventListener("click", () => {
         equalsButtonUsed = false;
         calculatorDisplay.textContent = `${firstNum} ${operator}`;
         inputDisplay.textContent = "";
+    } else if (operator !== undefined && displayVal === "") {
+        operator = "+";
+        calculatorDisplay.textContent = `${firstNum} ${operator}`;
+        inputDisplay.textContent = "";
+        console.log("operator switch to add")
     } else if (displayVal === "" && secondNum === undefined) {
         console.log("add impossible");
         return;
@@ -240,7 +246,7 @@ addButton.addEventListener("click", () => {
         equalsButtonUsed = false;
         calculatorDisplay.textContent = `${firstNum} ${operator}`;
         inputDisplay.textContent = "";
-        console.log("add numbers, operator is still addition");
+        console.log("add numbers, operator is currently addition");
     } else {
         firstNum = Number(displayVal);
         operator = "+";
@@ -249,6 +255,43 @@ addButton.addEventListener("click", () => {
         calculatorDisplay.textContent = `${firstNum} ${operator}`;
         inputDisplay.textContent = "";
         console.log("first num loaded to add");
+    }
+})
+
+subtractButton.addEventListener("click", () => {
+    if (equalsButtonUsed === true) {
+        operator = "-";
+        equalsButtonUsed = false;
+        calculatorDisplay.textContent = `${firstNum} ${operator}`;
+        inputDisplay.textContent = "";
+        console.log("equals button used, subtract operator using");
+    } else if (operator !== undefined && displayVal === "") {
+        operator = "-";
+        calculatorDisplay.textContent = `${firstNum} ${operator}`;
+        inputDisplay.textContent = "";
+        console.log("operator switch to subtract");
+    } else if (displayVal === "" && secondNum === undefined) {
+        console.log("subtract impossible");
+        return;
+    } else if (firstNum === result && displayVal !== ""){
+        secondNum = Number(displayVal);
+        result = operate(operator,firstNum,secondNum);
+        firstNum = result;
+        displayVal = "";
+        operator = "-";
+        secondNum = undefined;
+        equalsButtonUsed = false;
+        calculatorDisplay.textContent = `${firstNum} ${operator}`;
+        inputDisplay.textContent = "";
+        console.log("subtract numbers, operator is currently subtraction");
+    } else {
+        firstNum = Number(displayVal);
+        operator = "-";
+        result = firstNum;
+        displayVal = "";
+        calculatorDisplay.textContent = `${firstNum} ${operator}`;
+        inputDisplay.textContent = "";
+        console.log("first num loaded to subtract");
     }
 })
 
@@ -267,5 +310,18 @@ equalsButton.addEventListener("click", () => {
         calculatorDisplay.textContent = `${firstNum}`;
         inputDisplay.textContent = `${firstNum}`;
         console.log("equals used");
+    }
+})
+
+backspace.addEventListener("click", () => {                     //TODO: make this work
+    if (operator === undefined && secondNum === undefined) {
+        displayVal = displayVal.slice(0,-1);
+        inputDisplay.textContent = inputDisplay.textContent.slice(0, -1);
+        console.log("backspace");
+        console.log(displayVal);
+    } else if (operator !== undefined && displayVal === "") {
+        operator = undefined;
+        calculatorDisplay.textContent = `${firstNum}`;
+        console.log("operator removed");
     }
 })
