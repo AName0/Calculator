@@ -45,55 +45,105 @@ const numNineButton = document.getElementById("number-nine");
 
 const calculatorDisplay = document.getElementById("calculator-display");
 const inputDisplay = document.getElementById("input-display");
+inputDisplay.textContent = "0";
 
 numZeroButton.addEventListener("click", () => {
-    inputDisplay.textContent += "0";
-    displayVal += "0";
+    if (inputDisplay.textContent === "0") {
+        return;
+    } else {
+        inputDisplay.textContent += "0";
+        displayVal += "0";
+    }
 })
 
 numOneButton.addEventListener("click", () => {
-    inputDisplay.textContent += "1";
-    displayVal += "1";
+    if (inputDisplay.textContent === "0") {
+        inputDisplay.textContent = "1";
+        displayVal += "1"
+    } else {
+        inputDisplay.textContent += "1";
+        displayVal += "1";
+    }
 })
 
 numTwoButton.addEventListener("click", () => {
-    inputDisplay.textContent += "2";
-    displayVal += "2";
+    if (inputDisplay.textContent === "0") {
+        inputDisplay.textContent = "2";
+        displayVal += "2"
+    } else {
+        inputDisplay.textContent += "2";
+        displayVal += "2";
+    }
 })
 
 numThreeButton.addEventListener("click", () => {
-    inputDisplay.textContent += "3";
-    displayVal += "3";
+    if (inputDisplay.textContent === "0") {
+        inputDisplay.textContent = "3";
+        displayVal += "3"
+    } else {
+        inputDisplay.textContent += "3";
+        displayVal += "3";
+    }
 })
 
 numFourButton.addEventListener("click", () => {
-    inputDisplay.textContent += "4";
-    displayVal += "4";
+    if (inputDisplay.textContent === "0") {
+        inputDisplay.textContent = "4";
+        displayVal += "4"
+    } else {
+        inputDisplay.textContent += "4";
+        displayVal += "4";
+    }
 })
 
 numFiveButton.addEventListener("click", () => {
-    inputDisplay.textContent += "5";
-    displayVal += "5";
+    if (inputDisplay.textContent === "0") {
+        inputDisplay.textContent = "5";
+        displayVal += "5"
+    } else {
+        inputDisplay.textContent += "5";
+        displayVal += "5";
+    }
 })
 
 numSixButton.addEventListener("click", () => {
-    inputDisplay.textContent += "6";
-    displayVal += "6";
+    if (inputDisplay.textContent === "0") {
+        inputDisplay.textContent = "6";
+        displayVal += "6"
+    } else {
+        inputDisplay.textContent += "6";
+        displayVal += "6";
+    }
 })
 
 numSevenButton.addEventListener("click", () => {
-    inputDisplay.textContent += "7";
-    displayVal += "7";
+    if (inputDisplay.textContent === "0") {
+        inputDisplay.textContent = "7";
+        displayVal += "7"
+    } else {
+        inputDisplay.textContent += "7";
+        displayVal += "7";
+    }
 })
 
 numEightButton.addEventListener("click", () => {
-    inputDisplay.textContent += "8";
-    displayVal += "8";
+    if (inputDisplay.textContent === "0") {
+        inputDisplay.textContent = "8";
+        displayVal += "8"
+    } else {
+        inputDisplay.textContent += "8";
+        displayVal += "8";
+    }
 })
 
 numNineButton.addEventListener("click", () => {
-    inputDisplay.textContent += "9";
-    displayVal += "9";
+    if (inputDisplay.textContent === "0") {
+        inputDisplay.textContent = "9";
+        displayVal += "9"
+    } else {
+        inputDisplay.textContent += "9";
+        displayVal += "9";
+    }
 })
 
 const addButton = document.getElementById("addition");
@@ -109,9 +159,10 @@ addButton.addEventListener("click", () => {
         secondNum = Number(displayVal);
         result = operate(operator,firstNum,secondNum);
         firstNum = result;
-        displayVal = ""
-        secondNum = undefined
-        console.log("no");
+        displayVal = "";
+        operator = "+";
+        secondNum = undefined;
+        console.log("add numbers, operator is still addition");
     } else {
         firstNum = Number(displayVal);
         operator = "+";
@@ -121,5 +172,14 @@ addButton.addEventListener("click", () => {
 })
 
 equalsButton.addEventListener("click", () => {
-    
+    if (displayVal === "" && secondNum === undefined) {
+        return;
+    } else {
+        secondNum = Number(displayVal);
+        result = operate(operator,firstNum,secondNum)
+        firstNum = result;
+        displayVal = "";
+        operator = undefined;
+        secondNum = undefined;
+    }
 })
