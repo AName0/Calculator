@@ -1,0 +1,12 @@
+.calculator-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 98vh;
+    width: auto;
+    outline: 1px solid blue;
+}
+
+.calculator {
+    outline: 1px solid red;
+}
