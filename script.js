@@ -393,9 +393,10 @@ clearButton.addEventListener("click", () => {
 })
 
 backspace.addEventListener("click", () => {
-    if (inputDisplay.textContent === result) {
+    if (Number(inputDisplay.textContent) === firstNum) {
+        console.log("no backspace");
         return;
-    } else if (operator === undefined && secondNum === undefined) {
+    } else if (operator === undefined && secondNum === undefined && inputDisplay.textContent !== "0") {
         displayVal = displayVal.slice(0,-1);
         inputDisplay.textContent = inputDisplay.textContent.slice(0, -1);
         console.log("backspace");
@@ -406,5 +407,10 @@ backspace.addEventListener("click", () => {
         operator = undefined;
         calculatorDisplay.textContent = `${firstNum}`;
         console.log("operator removed");
+    } else if (inputDisplay.textContent !== "0") {
+        displayVal = displayVal.slice(0,-1);
+        inputDisplay.textContent = inputDisplay.textContent.slice(0, -1);
+        console.log("normal backspace");
+        console.log(displayVal);
     }
 })
