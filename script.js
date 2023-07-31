@@ -33,6 +33,14 @@ function operate(operator, firstNum, secondNum) {
     }
 }
 
+function reset() {
+    firstNum = undefined;
+    secondNum = undefined;
+    operator = undefined;
+    result = 0;
+    equalsButtonUsed = false;
+}
+
 const numZeroButton = document.getElementById("number-zero");
 const numOneButton = document.getElementById("number-one");
 const numTwoButton = document.getElementById("number-two");
@@ -51,6 +59,12 @@ inputDisplay.textContent = "0";
 numZeroButton.addEventListener("click", () => {
     if (inputDisplay.textContent === "0") {
         return;
+    } else if (inputDisplay.textContent == result && calculatorDisplay.textContent == result) {
+        calculatorDisplay.textContent = "";
+        inputDisplay.textContent = "0";
+        displayVal = "";
+        reset();
+        console.log("reset using zero button");
     } else {
         inputDisplay.textContent += "0";
         displayVal += "0";
@@ -60,7 +74,13 @@ numZeroButton.addEventListener("click", () => {
 numOneButton.addEventListener("click", () => {
     if (inputDisplay.textContent === "0") {
         inputDisplay.textContent = "1";
-        displayVal += "1"
+        displayVal += "1";
+    } else if (inputDisplay.textContent == result && calculatorDisplay.textContent == result) {
+        calculatorDisplay.textContent = "";
+        inputDisplay.textContent = "1";
+        displayVal = "1";
+        reset();
+        console.log("reset input num 1");
     } else {
         inputDisplay.textContent += "1";
         displayVal += "1";
@@ -180,7 +200,7 @@ addButton.addEventListener("click", () => {
         displayVal = "";
         calculatorDisplay.textContent = `${firstNum} ${operator}`;
         inputDisplay.textContent = "";
-        console.log("oop");
+        console.log("first num loaded to add");
     }
 })
 
@@ -198,5 +218,6 @@ equalsButton.addEventListener("click", () => {
         equalsButtonUsed = true;
         calculatorDisplay.textContent = `${firstNum}`;
         inputDisplay.textContent = `${firstNum}`;
+        console.log("equals used");
     }
 })
