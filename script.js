@@ -323,6 +323,40 @@ multiplyButton.addEventListener("click", () => {
     }
 })
 
+divisionButton.addEventListener("click", () => {
+    if (equalsButtonUsed === true) {
+        operator = "/";
+        equalsButtonUsed = false;
+        calculatorDisplay.textContent = `${firstNum} ${operator}`;
+        inputDisplay.textContent = "";
+        console.log("division button used, division operator using");
+    } else if (operator !== undefined && displayVal === "") {
+        operator = "/";
+        calculatorDisplay.textContent = `${firstNum} ${operator}`;
+        inputDisplay.textContent = "";
+        console.log("operator switch to divide");
+    } else if (firstNum === result && displayVal !== ""){
+        secondNum = Number(displayVal);
+        result = operate(operator,firstNum,secondNum);
+        firstNum = result;
+        displayVal = "";
+        operator = "/";
+        secondNum = undefined;
+        equalsButtonUsed = false;
+        calculatorDisplay.textContent = `${firstNum} ${operator}`;
+        inputDisplay.textContent = "";
+        console.log("divide numbers, operator is currently division");
+    } else {
+        firstNum = Number(displayVal);
+        operator = "/";
+        result = firstNum;
+        displayVal = "";
+        calculatorDisplay.textContent = `${firstNum} ${operator}`;
+        inputDisplay.textContent = "";
+        console.log("first num loaded to divide");
+    }
+})
+
 equalsButton.addEventListener("click", () => {
     if (displayVal === "") {
         console.log("equals not possible")
