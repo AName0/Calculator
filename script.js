@@ -162,12 +162,16 @@ addButton.addEventListener("click", () => {
         displayVal = "";
         operator = "+";
         secondNum = undefined;
+        calculatorDisplay.textContent = `${firstNum} ${operator}`;
+        inputDisplay.textContent = "";
         console.log("add numbers, operator is still addition");
     } else {
         firstNum = Number(displayVal);
         operator = "+";
         result = firstNum;
         displayVal = "";
+        calculatorDisplay.textContent = `${firstNum} ${operator}`;
+        inputDisplay.textContent = "";
     }
 })
 
