@@ -59,7 +59,7 @@ inputDisplay.textContent = "0";
 numZeroButton.addEventListener("click", () => {
     if (inputDisplay.textContent === "0") {
         return;
-    } else if (inputDisplay.textContent == result && calculatorDisplay.textContent == result) {
+    } else if (inputDisplay.textContent == result) {
         calculatorDisplay.textContent = "";
         inputDisplay.textContent = "0";
         displayVal = "";
@@ -75,7 +75,7 @@ numOneButton.addEventListener("click", () => {
     if (inputDisplay.textContent === "0") {
         inputDisplay.textContent = "1";
         displayVal += "1";
-    } else if (inputDisplay.textContent == result && calculatorDisplay.textContent == result) {
+    } else if (inputDisplay.textContent == result) {
         calculatorDisplay.textContent = "";
         inputDisplay.textContent = "1";
         displayVal = "1";
@@ -91,7 +91,7 @@ numTwoButton.addEventListener("click", () => {
     if (inputDisplay.textContent === "0") {
         inputDisplay.textContent = "2";
         displayVal += "2"
-    } else if (inputDisplay.textContent == result && calculatorDisplay.textContent == result) {
+    } else if (inputDisplay.textContent == result) {
         calculatorDisplay.textContent = "";
         inputDisplay.textContent = "2";
         displayVal = "2";
@@ -107,7 +107,7 @@ numThreeButton.addEventListener("click", () => {
     if (inputDisplay.textContent === "0") {
         inputDisplay.textContent = "3";
         displayVal += "3"
-    } else if (inputDisplay.textContent == result && calculatorDisplay.textContent == result) {
+    } else if (inputDisplay.textContent == result) {
         calculatorDisplay.textContent = "";
         inputDisplay.textContent = "3";
         displayVal = "3";
@@ -123,7 +123,7 @@ numFourButton.addEventListener("click", () => {
     if (inputDisplay.textContent === "0") {
         inputDisplay.textContent = "4";
         displayVal += "4"
-    } else if (inputDisplay.textContent == result && calculatorDisplay.textContent == result) {
+    } else if (inputDisplay.textContent == result) {
         calculatorDisplay.textContent = "";
         inputDisplay.textContent = "4";
         displayVal = "4";
@@ -139,7 +139,7 @@ numFiveButton.addEventListener("click", () => {
     if (inputDisplay.textContent === "0") {
         inputDisplay.textContent = "5";
         displayVal += "5"
-    } else if (inputDisplay.textContent == result && calculatorDisplay.textContent == result) {
+    } else if (inputDisplay.textContent == result) {
         calculatorDisplay.textContent = "";
         inputDisplay.textContent = "5";
         displayVal = "5";
@@ -155,7 +155,7 @@ numSixButton.addEventListener("click", () => {
     if (inputDisplay.textContent === "0") {
         inputDisplay.textContent = "6";
         displayVal += "6"
-    } else if (inputDisplay.textContent == result && calculatorDisplay.textContent == result) {
+    } else if (inputDisplay.textContent == result) {
         calculatorDisplay.textContent = "";
         inputDisplay.textContent = "6";
         displayVal = "6";
@@ -171,7 +171,7 @@ numSevenButton.addEventListener("click", () => {
     if (inputDisplay.textContent === "0") {
         inputDisplay.textContent = "7";
         displayVal += "7"
-    } else if (inputDisplay.textContent == result && calculatorDisplay.textContent == result) {
+    } else if (inputDisplay.textContent == result) {
         calculatorDisplay.textContent = "";
         inputDisplay.textContent = "7";
         displayVal = "1";
@@ -187,7 +187,7 @@ numEightButton.addEventListener("click", () => {
     if (inputDisplay.textContent === "0") {
         inputDisplay.textContent = "8";
         displayVal += "8"
-    } else if (inputDisplay.textContent == result && calculatorDisplay.textContent == result) {
+    } else if (inputDisplay.textContent == result) {
         calculatorDisplay.textContent = "";
         inputDisplay.textContent = "8";
         displayVal = "8";
@@ -203,7 +203,7 @@ numNineButton.addEventListener("click", () => {
     if (inputDisplay.textContent === "0") {
         inputDisplay.textContent = "9";
         displayVal += "9"
-    } else if (inputDisplay.textContent == result && calculatorDisplay.textContent == result) {
+    } else if (inputDisplay.textContent == result) {
         calculatorDisplay.textContent = "";
         inputDisplay.textContent = "9";
         displayVal = "9";
