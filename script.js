@@ -371,13 +371,13 @@ equalsButton.addEventListener("click", () => {
         console.log("number entered, no operator or secondNum");
     } else {
         secondNum = Number(displayVal);
+        calculatorDisplay.textContent = `${firstNum} ${operator} ${secondNum} =`;
         result = operate(operator,firstNum,secondNum)
         firstNum = result;
         displayVal = "";
         operator = undefined;
         secondNum = undefined;
         equalsButtonUsed = true;
-        calculatorDisplay.textContent = `${firstNum}`;
         inputDisplay.textContent = `${firstNum}`;
         console.log("equals used");
     }
