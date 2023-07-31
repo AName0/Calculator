@@ -4,18 +4,31 @@
     align-items: center;
     height: 98vh;
     width: auto;
-    outline: 1px solid blue;
+    outline: 1px solid black;
 }
 
 .calculator {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    width: 400px;
     outline: 1px solid red;
 }
 
 #calculator-display {
+    display: flex;
+    justify-content: flex-end;
     font-size: 24px;
+    height: auto;
+    width: 200px;
     margin-bottom: 8px;
+    outline: 1px solid green;
 }
 
 #input-display {
+    display: flex;
+    justify-content: flex-end;
     font-size: 20px;
 }
