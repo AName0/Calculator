@@ -1,8 +1,9 @@
-let firstNum = 0;
+let firstNum;
 let secondNum;
 let operator;
 let displayVal = "";
-let result;
+let result = 0;
+let equalsButtonUsed = false;
 
 function add(firstNum, secondNum) {
     return firstNum + secondNum;
@@ -153,15 +154,22 @@ const divisionButton = document.getElementById("division");
 const equalsButton = document.getElementById("equals");
 
 addButton.addEventListener("click", () => {
-    if (displayVal === "" && secondNum === undefined) {
+    if (equalsButtonUsed === true) {
+        operator = "+";
+        equalsButtonUsed = false;
+        calculatorDisplay.textContent = `${firstNum} ${operator}`;
+        inputDisplay.textContent = "";
+    } else if (displayVal === "" && secondNum === undefined) {
+        console.log("add impossible");
         return;
-    } else if (firstNum === result){
+    } else if (firstNum === result && displayVal !== ""){
         secondNum = Number(displayVal);
         result = operate(operator,firstNum,secondNum);
         firstNum = result;
         displayVal = "";
         operator = "+";
         secondNum = undefined;
+        equalsButtonUsed = false;
         calculatorDisplay.textContent = `${firstNum} ${operator}`;
         inputDisplay.textContent = "";
         console.log("add numbers, operator is still addition");
@@ -172,11 +180,13 @@ addButton.addEventListener("click", () => {
         displayVal = "";
         calculatorDisplay.textContent = `${firstNum} ${operator}`;
         inputDisplay.textContent = "";
+        console.log("oop");
     }
 })
 
 equalsButton.addEventListener("click", () => {
-    if (displayVal === "" && secondNum === undefined) {
+    if (displayVal === "") {
+        console.log("equals not possible")
         return;
     } else {
         secondNum = Number(displayVal);
@@ -185,5 +195,8 @@ equalsButton.addEventListener("click", () => {
         displayVal = "";
         operator = undefined;
         secondNum = undefined;
+        equalsButtonUsed = true;
+        calculatorDisplay.textContent = `${firstNum}`;
+        inputDisplay.textContent = `${firstNum}`;
     }
 })
